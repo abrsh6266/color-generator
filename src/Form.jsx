@@ -1,7 +1,27 @@
-const Form = () => {
+const Form = ({ color, setColor }) => {
   return (
-    <div>Form</div>
-  )
-}
+    <>
+      <form className="color-form">
+        <label htmlFor="color">Color Generator</label>
+        <input
+          type="color"
+          onChange={(e) => {
+            setColor(e.target.value);
+          }}
+          id="color"
+        />
+        <input
+          type="text"
+          value={color}
+          id="color"
+          onChange={(e) => {
+            setColor(e.target.value);
+          }}
+        />
+        <button></button>
+      </form>
+    </>
+  );
+};
 
-export default Form
+export default Form;
