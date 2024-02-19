@@ -1,8 +1,14 @@
-const Form = ({ color, setColor }) => {
+const Form = ({ color, setColor, handleColor }) => {
   return (
-    <>
-      <form className="color-form">
-        <label htmlFor="color">Color Generator</label>
+    <section className="container">
+      <h4>Color Generator</h4>
+      <form
+        className="color-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleColor();
+        }}
+      >
         <input
           type="color"
           onChange={(e) => {
@@ -18,9 +24,11 @@ const Form = ({ color, setColor }) => {
             setColor(e.target.value);
           }}
         />
-        <button></button>
+        <button className="btn" type="submit">
+          Submit
+        </button>
       </form>
-    </>
+    </section>
   );
 };
 
