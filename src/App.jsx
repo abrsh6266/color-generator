@@ -10,7 +10,7 @@ const App = () => {
   const handleColor = () => {
     try {
       setColors(new Values(color).all(10));
-      toast.success('')
+      toast.success('successfully generated')
     } catch (error) {
       toast.error(error.message)
     }
